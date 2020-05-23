@@ -15,10 +15,23 @@ public class Simulado {
 		String nome = sc.nextLine();
 		double salario;
 		do {
-		System.out.print("Salario: ");
-		salario = sc.nextDouble();
+			System.out.print("Salario: ");
+			salario = sc.nextDouble();
 		} while (salario < 0);	
+		int prestacoes;
+		double percentEntrada;
+		double valorFinanciamento;
 		
+		
+		System.out.print("Numero de prestacoes: ");
+		prestacoes = sc.nextInt();
+		System.out.print("Porcentagem de entrada: ");
+		percentEntrada = sc.nextDouble();
+		
+		do {	
+			System.out.print("Valor total financiado: ");
+			valorFinanciamento = sc.nextDouble();
+		} while ((valorFinanciamento - (percentEntrada / 100 * valorFinanciamento)) / prestacoes > salario * 0.3);
 		
 		sc.close();
 	}
